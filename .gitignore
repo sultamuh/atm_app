@@ -1,0 +1,8 @@
+# Ignore dependencies
+**/venv
+**/__pycache__
+**/*.pyc
+**/*.pyo
+
+# Ignore miscellaneous files
+**/.DS_Store

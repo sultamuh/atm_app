@@ -1,0 +1,195 @@
+LINK URL: https://mermaid.live/edit#pako:eNqVWG1vmzoU_isRn1Itndqmb0PTJJrQLVKa9Cbpne5urioXHGIN7Mg27Xqn9bffY2MwJtDu9gMBnsfn_Ryb_vQiFmPP96IUCTEmKOEoW9M11c-9JRaCMHoDnN7PNe3B38ePIc0zzJEE4NOn4uVyFczGwWJcPAXjm8lsTX9ZOSuOqECRWjJ6S9Z0_lmtNrfzu1Vx_3Wy-jJeBF-DafG8WgSz5XW4KJ5ug7-uJlMDjcPb-XJi1o0WYbAKS2AaVveTZXA1NQ-jL8Hsc3g7DYzicDa-n1_fL8PlcjJ3XQmiiOVULiWSuXjVkWC0mvzpaht3ReU2RfSNCN-Nw9nq3to4m8_u3bc10VckTUcs2yH6_KrYcGQC8Efxez1pc7YUcUjgHhXvZnn2gLl5v5Sc0KS3ZWmM-Qxl2Lx3gyX0j4E2KUOy94DA8aikNwOyg4syRoHvEiyDuur-QQ_MseCXSjkghUEWvCr0AKL1WqAwDd47plpc2QFow7LKKGFFo0yt9wsFB71HRmJLMmqKCPiusiZXq1Su-021JbO9hhY4YjyuctXsOdXob6SrK71FrgoHXREZEdGEblgVkD17-krvoKZr4KoYGLmDStaBjf41SXHDj2ZyJVOk4lUNq4VI4TeIogRz2wt3kqREPqs-MII4RrHJi1BL-hu43CK59Y3Qg96YaDMQf34hymJDfzESnjiRdXNbpQx60jKgFKZEyJe9qL2UqTbh3iEusFE3JRT3U7hYwwxSpovxDMmaTL1C-vvF4sYStMRTvJHfMGei_4jSHFurU0wT5QU4vr9qQZKtXO5QhP_HusLMG0bxc7nI9I5DIyKk8XyjgmncbDj_wFjqJHwEgWUpnszfSreOS6OedBI1kMHmB0VjFdXaVLNCzhnvou1P0UYNHnZVU9kforLVFdAvcb-zIA9apmbfaTuTEKdw3hlG-ANqUrTyi1hrMqSMxEji-RPFXGzJrmVBve-bCdNCiDAWBODII35LZ0W_E-ghfY1eehTHDfer4evkk-OMPeLXIrWX1fJs1Mhq_cgU5ZxjyNve5DXAnahGrLK6R8SUJQmOJ9UGc9ioHeQ8Gk7HCKkPGpBbiSymuSjs_ErkNuboCaUrJlHaRtGSN5h3Em7R8wOcNwzeUd16xUtvh2kMERjjHRNEiipoUrFeSokj6E6Jq3HcwRrjFP8Gi-haqdFMzt0E9t3Q-o2utR2VsoTQfgY59evn40Evh2zSrkKHVSyXMGw6ktVoqvrGz8kjzL4E653Ub56lHS3RFkffjVFTkkGA2xeVm241cZ2mAVtr_D7XFrbuHrUOynfKbqNbl8Lv6q4JSTBVB1QME99IMoeIg33tlbm2a_pOMGD0jWwDqjlvs9X9dUIlZ2na0tCmA01VGbB-ttjYe4PajSgq7tqOSVZl38j2G7NlUBft188zg1Kwbzc9W6k7zmBDFhO6g8oj6trcpAwR_8BRDruermwnIRYpqncfsgOkFS6HRytoBkcrZiZEK1aMB2hQ2bFUzYVuuBgInfhoi2iCzcHfOYWV3TlT31Ekag2sLcCKHuh6_x2i833Tyq8fK1Y3ZZG-yxBkDvFElPy__3H3t9w6o0U0qvrw8JPbHi14Swe2sILGDrWmjS2sRlLo_gdMQ9dI27Om9VZzZDSB1knR3uN1t0uDu5nX9QbvplWdqJ2HJO05VNK9gZdwEnu-5DkeeFBUkEd49HRa157cYvg283y4jRH_vvYgebAGvuq_MZaVyzjLk63nb2DiwlMxh81_cioK7LqYj1S8PP94eHKshXj-T--H5x-evb-4PD86-XBxfnFyfnY5PDobeM-ef3n0fnhxeXl-cXx5Prw4PTn9NfD-1XqP3w9PTo-Gw5Pzo-Hp2enZh1__AauuUpk
+
+
+
+
+
+
+
+classDiagram
+
+class SessionMode {
+	<<Enumeration>>
+	STANDARD
+	ADMIN
+}
+
+class TransactionCode {
+	<<Enumeration>>
+	LOGIN
+	LOGOUT
+	WITHDRAWAL
+	TRANSFER
+	PAYBILL
+	DEPOSIT
+	CREATE
+	DELETE
+	DISABLE
+	CHANGEPLAN
+	END_OF_SESSION
+}
+
+class AccountStatus {
+	<<Enumeration>>
+	ACTIVE
+	DISABLED
+}
+
+class TransactionPlan {
+	<<Enumeration>>
+	STUDENT_PLAN
+	NON_STUDENT_PLAN
+}
+
+class BillCompany {
+	<<Enumeration>>
+	EC
+	CQ
+	FI
+}
+
+class Account {
+	-int accountNumber
+	-String holderName
+	-AccountStatus status
+	-float balance
+	-TransactionPlan plan
+	
+	+getAccountNumber() int
+	+getHolderName() String
+	+getBalance() float
+	+getStatus() AccountStatus
+	+getPlan() TransactionPlan
+	
+	+setBalance(amount: float) void
+	+setStatus(status: AccountStatus) void
+	+setPlan(plan: TransactionPlan) void
+}
+
+class TransactionRecord {
+	-TransactionCode code
+	-String holderName
+	-int accountNumber
+	-float amount
+	-String miscInfo
+	
+	+TransactionRecord(code, holderName, accountNumber, amount, miscInfo)
+	+getFileTransactionCode() String
+	+toFileString() String
+}
+
+class FileManager {
+	<<Utility>>
+	
+	+readAccountsFile(filePath: String) Dictionary~int, Account~
+	+writeTransactionFile(filePath: String, transactions: List~TransactionRecord~) void
+	
+	-parseAccountLine(line: String) Account
+	-formatTransactionLine(t: TransactionRecord) String
+	-padLeftZeros(value: String, length: int) String
+	-padRightSpaces(value: String, length: int) String
+	-formatMoney(value: float) String
+	-isEndOfFileAccount(line: String) bool
+}
+
+class ConsoleIO {
+	<<Utility>>
+	
+	+readLine() String
+	+writeLine(message: String) void
+	+writeError(message: String) void
+}
+
+class AccountManager {
+	-Dictionary~int, Account~ accounts
+	
+	+AccountManager(accounts: Dictionary~int, Account~)
+	
+	+getAccount(accountNumber: int) Account
+	+accountExists(accountNumber: int) bool
+	+validateOwnership(accountNumber: int, holderName: String) bool
+	+isAccountActive(accountNumber: int) bool
+	+isAccountUsable(accountNumber: int) bool
+	
+	+addAccount(account: Account) void
+	+removeAccount(accountNumber: int) void
+}
+
+class SessionManager {
+	-SessionMode currentMode
+	-String currentUser
+	-bool isLoggedIn
+	
+	-AccountManager accountManager
+	-List~TransactionRecord~ transactionLog
+	
+	-float sessionWithdrawalTotal
+	-float sessionTransferTotal
+	-float sessionPaybillTotal
+	
+	-Dictionary~int, float~ pendingDeposits
+	-Set~int~ sessionCreatedAccounts
+	-Set~int~ sessionDeletedAccounts
+	-Set~int~ sessionDisabledAccounts
+	
+	+SessionManager(accountManager: AccountManager)
+	
+	+login(mode: SessionMode, username: String) bool
+	+logout() List~TransactionRecord~
+	+validateTransactionPrivilege(code: TransactionCode) bool
+	+checkSessionLimits(code: TransactionCode, amount: float) bool
+	
+	+logTransaction(record: TransactionRecord) void
+	+updateSessionTotals(code: TransactionCode, amount: float) void
+	+generateEndSessionRecord() TransactionRecord
+	
+	+isLoggedIn() bool
+	+getCurrentMode() SessionMode
+}
+
+class TransactionController {
+	-SessionManager session
+	-FileManager fileManager
+	-ConsoleIO console
+	
+	+TransactionController(session: SessionManager, fileManager: FileManager, console: ConsoleIO)
+	
+	+processInput(input: String) void
+	
+	+executeLogin() void
+	+executeLogout() void
+	+executeWithdrawal() void
+	+executeTransfer() void
+	+executePaybill() void
+	+executeDeposit() void
+	+executeCreateAcct() void
+	+executeDeleteAcct() void
+	+executeDisableAcct() void
+	+executeChangePlan() void
+	
+	-validateNumericInput(input: String) bool
+	-validateAmount(input: String) bool
+	-validateAccountNumber(input: String) bool
+}
+
+class ATM {
+	+main(args: String[]) void
+	+run() void
+}
+
+SessionManager --> SessionMode
+SessionManager --> TransactionRecord
+SessionManager --> AccountManager
+
+AccountManager --> Account
+
+TransactionRecord --> TransactionCode
+
+FileManager --> Account
+FileManager --> TransactionRecord
+
+TransactionController --> SessionManager
+TransactionController --> FileManager
+TransactionController --> ConsoleIO
+
+ATM --> TransactionController
