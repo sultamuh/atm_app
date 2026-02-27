@@ -1,0 +1,12 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Enter session mode (STANDARD / ADMIN): Error: Invalid choice. Valid options: STANDARD, ADMIN
+Enter session mode (STANDARD / ADMIN): Error: Invalid choice. Valid options: STANDARD, ADMIN
+Enter session mode (STANDARD / ADMIN): Enter account holder name: Logged in as STANDARD mode. Welcome John Doe!
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Enter account number: Enter amount: Deposit recorded.
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!
