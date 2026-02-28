@@ -1,0 +1,8 @@
+LOGIN
+ADMIN
+CREATE
+VeryLongNameMoreThanTwentyChars
+100000
+99999.99
+LOGOUT
+EXIT

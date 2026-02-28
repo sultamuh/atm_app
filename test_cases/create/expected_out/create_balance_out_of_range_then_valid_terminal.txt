@@ -1,0 +1,16 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Enter session mode (STANDARD / ADMIN): Logged in as ADMIN mode. Welcome !
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Enter new account holder name: Enter initial balance: Error: Value must be between 0 and 99999.99.
+Enter initial balance: Account created successfully.
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Session ended. Transactions written:
+05 1 VeryLongNameMoreThan   99999.99 
+00 0                            0.00 
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!

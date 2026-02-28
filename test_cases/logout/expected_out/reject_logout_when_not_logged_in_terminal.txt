@@ -1,0 +1,7 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Error: You must login first.
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!

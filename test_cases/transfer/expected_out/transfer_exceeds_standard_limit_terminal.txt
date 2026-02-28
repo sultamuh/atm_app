@@ -1,0 +1,10 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Enter session mode (STANDARD / ADMIN): Enter account holder name: Logged in as STANDARD mode. Welcome Alice!
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Enter source account number: Enter destination account number: Enter transfer amount: Error: Transfer exceeds session limit.
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!

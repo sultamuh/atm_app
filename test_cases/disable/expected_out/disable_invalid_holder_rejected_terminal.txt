@@ -1,0 +1,13 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Enter session mode (STANDARD / ADMIN): Logged in as ADMIN mode. Welcome !
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Enter new account holder name: Enter initial balance: Account created successfully.
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Enter account holder name: Enter account number to disable: Error: Invalid account or holder name.
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!
