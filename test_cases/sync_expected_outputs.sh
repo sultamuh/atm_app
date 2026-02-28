@@ -1,6 +1,8 @@
 #!/bin/bash
 
-cd "/Users/Ben/Ontario Tech/semester 4/Software Quality Assurance/atm_app/test_cases"
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 # Copy each test output to expected with correct naming
 for dir in */input; do
