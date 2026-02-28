@@ -96,10 +96,10 @@ for input_file in "$INPUTS_DIR"/*; do
         # Capture both stdout and stderr
         if python3 "$ATM_SCRIPT" < "$input_file" > "$terminal_output" 2>&1; then
             echo -e "  ${GREEN}✓ Execution succeeded${NC}"
-            ((passed++))
+            ((++passed))
         else
             echo -e "  ${RED}✗ Execution failed${NC}"
-            ((failed++))
+            ((++failed))
         fi
         
         # Check if transaction output file was created

@@ -71,15 +71,15 @@ for operation in "${operations[@]}"; do
             # Find matching actual output file
             actual_file="$OUTPUTS_DIR/${operation}_${test_name}.${extension}"
             
-            ((total_count++))
+            ((++total_count))
             echo -n "  ${test_name}: "
             
             if [ ! -f "$actual_file" ]; then
                 echo -e "${RED}MISSING${NC} (expected: $actual_file)"
-                ((fail_count++))
+                ((++fail_count))
             elif diff -q "$expected_file" "$actual_file" > /dev/null 2>&1; then
                 echo -e "${GREEN}PASS${NC}"
-                ((pass_count++))
+                ((++pass_count))
             else
                 echo -e "${RED}FAIL${NC}"
                 echo "    Expected: $expected_file"
@@ -87,7 +87,7 @@ for operation in "${operations[@]}"; do
                 # Show first difference
                 echo "    Diff:"
                 diff -u "$expected_file" "$actual_file" 2>&1 | head -20 | sed 's/^/      /'
-                ((fail_count++))
+                ((++fail_count))
             fi
         fi
     done

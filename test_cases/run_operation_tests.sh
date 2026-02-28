@@ -71,8 +71,8 @@ for operation in "${operations[@]}"; do
     input_count=0
     for input_file in "$input_dir"/*; do
         if [ -f "$input_file" ]; then
-            ((input_count++))
-            ((test_count++))
+            ((++input_count))
+            ((++test_count))
             
             filename=$(basename "$input_file")
             test_name="${filename%.*}"
@@ -94,10 +94,10 @@ for operation in "${operations[@]}"; do
             # Run test
             if python3 "$ATM_SCRIPT" < "$input_file" > "$terminal_output" 2>&1; then
                 echo -e "${GREEN}✓${NC}"
-                ((pass_count++))
+                ((++pass_count))
             else
                 echo -e "${RED}✗${NC}"
-                ((fail_count++))
+                ((++fail_count))
             fi
             
             # Capture transaction output

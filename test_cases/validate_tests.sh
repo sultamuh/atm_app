@@ -77,12 +77,12 @@ for expected_file in "$EXPECTED_DIR"/*; do
             echo -e "  ${RED}✗ MISSING${NC}: Actual output file not found"
             echo "    Expected: $expected_file"
             echo "    Actual:   $actual_file"
-            ((missing++))
+            ((++missing))
         else
             # Use diff to compare files
             if diff -q "$expected_file" "$actual_file" > /dev/null 2>&1; then
                 echo -e "  ${GREEN}✓ PASS${NC}: Output matches expected"
-                ((passed++))
+                ((++passed))
             else
                 echo -e "  ${RED}✗ FAIL${NC}: Output differs from expected"
                 echo ""
@@ -94,7 +94,7 @@ for expected_file in "$EXPECTED_DIR"/*; do
                     echo "  ... (more differences - see full diff with: diff -u $expected_file $actual_file)"
                 fi
                 echo ""
-                ((failed++))
+                ((++failed))
             fi
         fi
     fi
