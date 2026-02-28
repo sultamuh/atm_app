@@ -1,0 +1,35 @@
+# Test Framework .gitignore
+# Generated outputs should not be committed
+
+# Auto-generated outputs directory
+outputs/
+outputs/**
+*.txt.bak
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Accounts file (may be dynamically generated)
+accounts.txt
+transactions.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Allow input and expected_out directories
+!*/input/
+!*/expected_out/
+!/inputs/
+!/expected/

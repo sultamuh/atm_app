@@ -1,0 +1,75 @@
+========================================
+ATM Comprehensive Test Runner
+========================================
+
+[0;34mOperation: login[0m
+================================
+  Test: admin_allows_privileged_transaction ... [0;32m✓[0m
+  Test: admin_valid_login ... [0;32m✓[0m
+  Test: admin_wrong_mode_then_correct ... [0;32m✓[0m
+  Test: invalid_account ... [0;32m✓[0m
+  Test: reject_non_login_before_login ... [0;32m✓[0m
+  Test: reject_second_login_until_logout ... [0;32m✓[0m
+  Test: valid_login ... [0;32m✓[0m
+  Test: wrong_pin_then_correct ... [0;32m✓[0m
+
+[0;34mOperation: logout[0m
+================================
+  Test: logout_after_login ... [0;32m✓[0m
+  Test: post_logout_only_login_allowed ... [0;32m✓[0m
+  Test: reject_logout_when_not_logged_in ... [0;32m✓[0m
+
+[0;34mOperation: create[0m
+================================
+  Test: create_balance_out_of_range_then_valid ... [0;32m✓[0m
+  Test: create_new_account ... [0;32m✓[0m
+
+[0;34mOperation: delete[0m
+================================
+  Test: delete_account ... [0;32m✓[0m
+  Test: delete_prevents_further_use ... [0;32m✓[0m
+
+[0;34mOperation: deposit[0m
+================================
+  Test: admin_deposit_with_holder_name ... [0;32m✓[0m
+  Test: deposit_not_available_same_session ... [0;32m✓[0m
+  Test: deposit_valid ... [0;32m✓[0m
+
+[0;34mOperation: withdrawal[0m
+================================
+  Test: admin_withdrawal_insufficient_balance ... [0;32m✓[0m
+  Test: withdrawal_insufficient_funds ... [0;32m✓[0m
+  Test: withdrawal_valid ... [0;32m✓[0m
+
+[0;34mOperation: transfer[0m
+================================
+  Test: transfer_exceeds_standard_limit ... [0;32m✓[0m
+  Test: transfer_insufficient_source_balance_admin ... [0;32m✓[0m
+  Test: transfer_valid ... [0;32m✓[0m
+
+[0;34mOperation: paybill[0m
+================================
+  Test: paybill_exceeds_standard_limit ... [0;32m✓[0m
+  Test: paybill_hydro ... [0;32m✓[0m
+  Test: paybill_invalid_company_then_valid ... [0;32m✓[0m
+
+[0;34mOperation: disable[0m
+================================
+  Test: disable_account ... [0;32m✓[0m
+  Test: disable_invalid_holder_rejected ... [0;32m✓[0m
+
+[0;34mOperation: changeplan[0m
+================================
+  Test: changeplan_invalid_holder_rejected ... [0;32m✓[0m
+  Test: changeplan_monthly ... [0;32m✓[0m
+
+========================================
+Test Run Summary
+========================================
+Total Tests: 31
+Passed: [0;32m31[0m
+Failed: [0;31m0[0m
+
+Output files saved to: /Users/Ben/Ontario Tech/semester 4/Software Quality Assurance/atm_app/test_cases/outputs
+
+Next: Run 'bash validate_operation_tests.sh' to validate outputs

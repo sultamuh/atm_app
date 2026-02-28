@@ -1,0 +1,10 @@
+LOGIN
+ADMIN
+CREATE
+Alice
+0
+DEPOSIT
+Alice
+1
+500
+EXIT
