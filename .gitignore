@@ -3,6 +3,12 @@
 **/__pycache__
 **/*.pyc
 **/*.pyo
+.idea/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+
 
 # Ignore miscellaneous files
 **/.DS_Store
