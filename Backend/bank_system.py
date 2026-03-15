@@ -35,7 +35,7 @@ class BankSystem:
                 acc["status"],
                 acc["balance"],
                 acc["total_transactions"],
-                acc["plan"]
+                acc["plan"],
             )
             self.accounts[account.account_number] = account
 
@@ -49,12 +49,34 @@ class BankSystem:
         Returns:
             None
         """
+        self.apply_transaction_fees()
         account_list = []
 
         for account in self.accounts.values():
             account_list.append(account.to_dict())
 
         write_new_current_accounts(account_list, file_path)
+
+    def apply_transaction_fees(self):
+        """
+        Deducts daily transaction fees from all accounts based on their plan type.
+        Student plan (SP) accounts are charged $0.05 per transaction, and
+        non-student plan (NP) accounts are charged $0.10 per transaction.
+
+        Returns:
+            None
+        """
+        for account in self.accounts.values():
+            if account.plan == "SP":
+                fee = account.total_transactions * 0.05
+            else:
+                fee = account.total_transactions * 0.10
+            account.balance = round(account.balance - fee, 2)
+            if account.balance < 0:
+                log_constraint_error(
+                    "Balance went negative after transaction fees", "Apply Fees"
+                )
+                account.balance = 0.0
 
     def get_account(self, account_number):
         """
@@ -89,12 +111,7 @@ class BankSystem:
             return False
 
         self.accounts[account_number] = Account(
-            account_number,
-            name,
-            status,
-            balance,
-            0,
-            plan
+            account_number, name, status, balance, 0, plan
         )
         return True
 
@@ -183,7 +200,10 @@ class BankSystem:
             return False
 
         if not from_account.withdraw(amount):
-            log_constraint_error("Transfer failed due to insufficient funds or invalid amount", "Transfer")
+            log_constraint_error(
+                "Transfer failed due to insufficient funds or invalid amount",
+                "Transfer",
+            )
             return False
 
         if not to_account.deposit(amount):
