@@ -1,11 +1,3 @@
-"""
-CSCI 3060U - Phase 5: White Box Unit Testing
-==============================================
-
-Method 1 (Statement Coverage):       Account.withdraw()
-Method 2 (Decision & Loop Coverage): read_old_bank_accounts()
-"""
-
 import unittest
 import os
 import tempfile
