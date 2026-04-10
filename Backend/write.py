@@ -1,8 +1,8 @@
 def write_new_current_accounts(accounts, file_path):
     """
     Writes Current Bank Accounts File with strict validation
-    Format: NNNNN AAAAAAAAAAAAAAAAAAAA S PPPPPPPP TT
-    Where TT is account plan (SP or NP)
+    Format: NNNNN AAAAAAAAAAAAAAAAAAAA S PPPPPPPP TTTT PP
+    Where TTTT is transaction count and PP is account plan (SP or NP)
     """
     with open(file_path, 'w') as file:
         for acc in accounts:
@@ -33,13 +33,20 @@ def write_new_current_accounts(accounts, file_path):
             if plan not in ('SP', 'NP'):
                 raise ValueError(f"Invalid plan type '{plan}'. Must be SP or NP")
 
+            # Validate total transaction count
+            total_transactions = acc.get('total_transactions', 0)
+            if not isinstance(total_transactions, int) or total_transactions < 0:
+                raise ValueError(f"Invalid total transaction count: {total_transactions}")
+            if total_transactions > 9999:
+                raise ValueError(f"Transaction count exceeds 9999: {total_transactions}")
+
             # Format fields
             acc_num = acc['account_number'].zfill(5)
             name = acc['name'].ljust(20)[:20]
             balance = f"{acc['balance']:08.2f}"
+            tx_count = str(total_transactions).zfill(4)
 
-            # Write line (37 chars + plan type = 39 chars total)
-            file.write(f"{acc_num} {name} {acc['status']} {balance} {plan}\n")
+            file.write(f"{acc_num} {name} {acc['status']} {balance} {tx_count} {plan}\n")
         
         # Add END_OF_FILE marker
-        file.write("00000 END_OF_FILE          A 00000.00 NP\n")
+        file.write("00000 END_OF_FILE          A 00000.00 0000 NP\n")

@@ -80,15 +80,29 @@ class TransactionProcessor:
 
             elif command == "CREATE":
                 account_number = parts[1]
-                name = parts[2]
-                status = parts[3]
-                balance = float(parts[4])
-                plan = parts[5]
+
+                # CREATE format allows multi-word account names:
+                # CREATE account_number <name...> status balance plan
+                if len(parts) < 6:
+                    raise ValueError("Invalid CREATE format")
+
+                status = parts[-3]
+                balance = float(parts[-2])
+                plan = parts[-1]
+                name = " ".join(parts[2:-3]).strip()
+
+                if not name:
+                    raise ValueError("CREATE requires a holder name")
+
                 self.bank_system.create_account(account_number, name, status, balance, plan)
 
             elif command == "DELETE":
                 account_number = parts[1]
                 self.bank_system.delete_account(account_number)
+
+            elif command == "DISABLE":
+                account_number = parts[1]
+                self.bank_system.disable_account(account_number)
 
             elif command == "CHANGEPLAN":
                 account_number = parts[1]

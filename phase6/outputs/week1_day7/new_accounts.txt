@@ -1,0 +1,5 @@
+01234 Sean Smith           A 00121.35 0003 NP
+03456 Chris Lee            A 00998.25 0005 SP
+05678 Alex Brown           A 00496.50 0010 SP
+09012 Mia Johnson          D 00074.55 0001 NP
+00000 END_OF_FILE          A 00000.00 0000 NP

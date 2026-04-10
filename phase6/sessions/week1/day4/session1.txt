@@ -1,0 +1,5 @@
+LOGIN
+STANDARD
+Chris Lee
+LOGOUT
+EXIT

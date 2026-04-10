@@ -52,7 +52,7 @@ class BankSystem:
         self.apply_transaction_fees()
         account_list = []
 
-        for account in self.accounts.values():
+        for account in sorted(self.accounts.values(), key=lambda a: int(a.account_number)):
             account_list.append(account.to_dict())
 
         write_new_current_accounts(account_list, file_path)
@@ -129,6 +129,25 @@ class BankSystem:
 
         if account is None:
             log_constraint_error("Account not found", "Delete Account")
+            return False
+
+        account.disable()
+        return True
+
+    def disable_account(self, account_number):
+        """
+        Disables an account.
+
+        Args:
+            account_number (str): Account number to disable.
+
+        Returns:
+            bool: True if successful, False otherwise.
+        """
+        account = self.get_account(account_number)
+
+        if account is None:
+            log_constraint_error("Account not found", "Disable Account")
             return False
 
         account.disable()

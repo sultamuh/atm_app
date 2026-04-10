@@ -1,0 +1,11 @@
+===== ATM Application Started =====
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Enter session mode (STANDARD / ADMIN): Enter account holder name: Logged in as STANDARD mode. Welcome Sean Smith!
+Available commands: LOGOUT, WITHDRAWAL, TRANSFER, PAYBILL, DEPOSIT, CREATE, DELETE, DISABLE, CHANGEPLAN
+Type EXIT to quit the application.
+Enter command: Session ended. Transactions written:
+00 0 Sean Smith                 0.00 
+Available command: LOGIN
+Type EXIT to quit the application.
+Enter command: Exiting ATM application. Goodbye!

@@ -1,0 +1,5 @@
+LOGIN
+STANDARD
+Taylor Kim
+LOGOUT
+EXIT
