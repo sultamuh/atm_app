@@ -1,0 +1,5 @@
+LOGIN
+STANDARD
+Sean Smith
+LOGOUT
+EXIT

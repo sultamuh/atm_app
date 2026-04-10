@@ -70,6 +70,6 @@ Total Tests: 31
 Passed: [0;32m31[0m
 Failed: [0;31m0[0m
 
-Output files saved to: /Users/Ben/Ontario Tech/semester 4/Software Quality Assurance/atm_app/test_cases/outputs
+Output files saved to: Frontend/test_cases/outputs
 
 Next: Run 'bash validate_operation_tests.sh' to validate outputs

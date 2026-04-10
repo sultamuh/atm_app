@@ -8,22 +8,27 @@ def read_old_bank_accounts(file_path):
         for line_num, line in enumerate(file, 1):
             clean_line = line.rstrip('\n')
             
-            # Validate line length (now 44 chars to include plan type)
+            # Validate line length (45 chars for current project format)
             if len(clean_line) != 45:
                 print(f"ERROR: Fatal error - Line {line_num}: Invalid length ({len(clean_line)} chars, expected 45)")
                 continue
 
             try:
                 # Extract fields with positional validation
-                account_number = clean_line[0:4]
+                account_number_field = clean_line[0:5]
                 name = clean_line[6:25]  # 20 characters
                 status = clean_line[27]
                 balance_str = clean_line[29:37]  # 8 characters
                 transactions_str = clean_line[38:42]  # 4 characters
                 plan_type = clean_line[43:45]  # 2 characters (SP/NP)
 
+                # Stop processing at EOF marker record.
+                if name.strip() == 'END_OF_FILE':
+                    break
+
                 # Validate account number
-                if not account_number.isdigit():
+                account_number = account_number_field.strip()
+                if not account_number.isdigit() or len(account_number) > 5:
                     print(f"ERROR: Fatal error - Line {line_num}: Account number must be 5 digits")
                     continue
 
